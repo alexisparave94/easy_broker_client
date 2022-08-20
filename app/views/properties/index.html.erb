@@ -1,7 +1,11 @@
 <h1>Properties</h1>
 
+<%= render "pagination", pages_number: @pages_number, page: @page %>
+
 <div id="properties">
   <% @properties.each do |property| %>
     <%= render "property", property: property %>
   <% end %>
 </div>
+
+<%= render "pagination", pages_number: @pages_number, page: @page %>
