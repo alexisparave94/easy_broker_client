@@ -6,6 +6,11 @@ class PropertiesController < ApplicationController
     @properties = res["content"]
   end
 
+  def show
+    public_id = params[:id]
+    @property = HTTParty.get("#{@base_url}/properties/#{public_id}", @options)
+  end
+
   private
 
   def initial_config
