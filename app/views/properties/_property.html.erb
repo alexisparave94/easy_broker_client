@@ -1,0 +1,31 @@
+<div>
+  <p>
+    <strong>ID:</strong>
+    <%= property['public_id'] %>
+  </p>
+
+  <p>
+    <%= property['title'] %>
+  </p>
+
+  <p>
+    <strong>Property type:</strong>
+    <%= property['property_type'] %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= property['location'] %>
+  </p>
+
+  <p>
+    <% if !property['title_image_thumb'] %>
+      No hay imagen para mostrar
+    <% else %>
+      <%= image_tag "#{property['title_image_thumb']}"%>  
+    <% end %>
+  </p>
+  <p>
+    <%= link_to "Show", property_url(id: property['public_id']) %>
+  </p>
+</div>
