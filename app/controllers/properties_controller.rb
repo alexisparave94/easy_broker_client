@@ -7,6 +7,8 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @res = {}
+    @res = JSON.parse(params[:res], symbolize_names: true) if params[:res]
     public_id = params[:id]
     @property = HTTParty.get("#{@base_url}/properties/#{public_id}", @options)
   end
