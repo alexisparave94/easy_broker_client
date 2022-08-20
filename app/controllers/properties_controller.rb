@@ -1,8 +1,10 @@
+require_relative "../poros/property"
+
 class PropertiesController < ApplicationController
   def index
     @page = params[:page].to_i || 1
     res = @easybroker_obj.list_properties(@page)
-    @properties = res["content"]
+    @properties = res["content"].map { |prop| Property.new(prop) }
     @pages_number ||= pages_number
   end
 
@@ -10,7 +12,7 @@ class PropertiesController < ApplicationController
     @res = {}
     @res = JSON.parse(params[:res], symbolize_names: true) if params[:res]
     public_id = params[:id]
-    @property = @easybroker_obj.show_property(public_id)
+    @property = Property.new(@easybroker_obj.show_property(public_id))
   end
 
   private

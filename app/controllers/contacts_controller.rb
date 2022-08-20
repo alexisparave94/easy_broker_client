@@ -1,3 +1,5 @@
+require_relative "../poros/contact"
+
 class ContactsController < ApplicationController
   def create
     body = get_body(params)
@@ -8,17 +10,18 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.permit(:name, :phone, :email, :message, :source)
+    params.permit(:public_id, :name, :phone, :email, :message, :source)
   end
 
   def get_body(params)
+    contact = Contact.new(params)
     {
-      property_id: params[:public_id],
-      name: params[:name],
-      phone: params[:phone],
-      email: params[:email],
-      message: params[:message],
-      source: "mydomain.com"
+      property_id: contact.property_id,
+      name: contact.name,
+      phone: contact.phone,
+      email: contact.email,
+      message: contact.message,
+      source: contact.source
     }
   end
 end

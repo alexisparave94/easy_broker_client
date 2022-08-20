@@ -1,29 +1,29 @@
 <p>
   <strong>ID:</strong>
-  <%= @property['public_id'] %>
+  <%= @property.public_id %>
 </p>
 <p>
-  <%= @property['title'] %>
+  <%= @property.title %>
 </p>
 <p>
-  <%= @property['description'] %>
+  <%= @property.description %>
 </p>
 
 <p>
-  <% if @property['property_images'].empty? %>
+  <% if @property.property_images.empty? %>
     No hay imagen para mostrar
   <% else %>
-    <%= image_tag "#{@property['property_images'][0]['url']}"%>
+    <%= image_tag "#{@property.property_images[0]['url']}"%>
   <% end %>
 </p>
 <p>
   <strong>Property type:</strong>
-  <%= @property['property_type'] %>
+  <%= @property.property_type %>
 </p>
 
 <p>
   <strong>Location:</strong>
-  <%= @property['location']['name'] %>
+  <%= @property.location['name'] %>
 </p>
 
 <div>
