@@ -1,0 +1,39 @@
+<div>
+  <h2>Contact Form</h2>
+
+  <%= form_with url: "/contact", method: :post do |form| %>
+    <div>
+      <p>
+        <%= res[:error] if res[:error] %>
+        <%= "Contacto Enviado" if res[:status] %>
+      </p>
+    </div>
+    
+    <div>
+      <%= form.text_field :public_id, hidden: true, value: property['public_id'] %> 
+    </div>
+    <div>
+      <%= form.label :name, "Name:" %>
+      <%= form.text_field :name %> 
+    </div>
+    <br>
+    <div>
+      <%= form.label :phone, "Phone:" %>
+      <%= form.telephone_field :phone %> 
+    </div>
+    <br>
+    <div>
+      <%= form.label :email, "Email:" %>
+      <%= form.email_field :email %> 
+    </div>
+    <br>
+    <div>
+      <%= form.label :message, "Message:" %>
+      <%= form.text_area :message %> 
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Enviar" %>
+    </div>
+  <% end %>
+</div>
