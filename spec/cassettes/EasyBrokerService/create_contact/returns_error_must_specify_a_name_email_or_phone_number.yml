@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stagingeb.com/v1/contact_requests
+    body:
+      encoding: UTF-8
+      string: '{"property_id":"EB-C0156","message":"I''m interested contact me","source":"mydomain.com"}'
+    headers:
+      X-Authorization:
+      - l7u502p8v46ba3ppgvj5y2aad50lb9
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Sat, 20 Aug 2022 22:29:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 422 Unprocessable Entity
+      Cache-Control:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - 63370a96-c677-4732-a46a-1ae14bd90de8
+      X-Download-Options:
+      - noopen
+      X-Runtime:
+      - '0.035189'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - rp=api.stagingeb.com; path=/; expires=Sun, 21 Aug 2022 22:29:03 GMT
+      - source=mydomain.com; path=/; expires=Mon, 20 Feb 2023 23:29:03 GMT
+      X-Powered-By:
+      - Phusion Passenger(R) 6.0.14
+      Server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.14
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvciI6IkRlYmVzIGVzcGVjaWZpY2FyIHVuIG5vbWJyZSwgY29ycmVvIG8gbsO6bWVybyB0ZWxlZsOzbmljby4ifQ==
+  recorded_at: Sat, 20 Aug 2022 22:29:04 GMT
+recorded_with: VCR 6.1.0
