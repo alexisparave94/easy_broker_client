@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.stagingeb.com/v1/properties/XXXXXXX
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Authorization:
+      - l7u502p8v46ba3ppgvj5y2aad50lb9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Sat, 20 Aug 2022 23:19:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 404 Not Found
+      Cache-Control:
+      - no-cache
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Request-Id:
+      - b547f2be-db25-4362-a872-790e9c884577
+      X-Download-Options:
+      - noopen
+      X-Runtime:
+      - '0.025631'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - rp=api.stagingeb.com; path=/; expires=Sun, 21 Aug 2022 23:19:01 GMT
+      - source=api.stagingeb.com; path=/; expires=Tue, 21 Feb 2023 00:19:01 GMT
+      X-Powered-By:
+      - Phusion Passenger(R) 6.0.14
+      Server:
+      - nginx/1.18.0 + Phusion Passenger(R) 6.0.14
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvciI6Ik5vIHNlIGVuY29udHLDsyBsYSBwcm9waWVkYWQifQ==
+  recorded_at: Sat, 20 Aug 2022 23:19:02 GMT
+recorded_with: VCR 6.1.0

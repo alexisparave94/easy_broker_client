@@ -8,19 +8,38 @@ RSpec.describe EasyBrokerService, type: :request do
     it "returns correctly data", :vcr do
       expect(response.parsed_response).to be_kind_of(Hash)
       expect(response.parsed_response).to have_key("pagination")
+      expect(response.parsed_response["pagination"]).to have_key("limit")
+      expect(response.parsed_response["pagination"]).to have_key("page")
+      expect(response.parsed_response["pagination"]).to have_key("total")
       expect(response.parsed_response).to have_key("content")
       expect(response.parsed_response["content"]).to be_kind_of(Array)
+      expect(response.parsed_response["content"][0]).to have_key("public_id")
+      expect(response.parsed_response["content"][0]).to have_key("title")
+      expect(response.parsed_response["content"][0]).to have_key("title_image_thumb")
+      expect(response.parsed_response["content"][0]).to have_key("location")
+      expect(response.parsed_response["content"][0]).to have_key("property_type")
     end
   end
 
   describe "show_property" do
-    public_id = "EB-C0156"
-    let(:response) { EasyBrokerService.new.show_property("EB-C0156") }
     it "returns correctly data", :vcr do
-      expect(response.parsed_response).to be_kind_of(Hash)
-      expect(response.parsed_response).to have_key("public_id")
-      expect(response.parsed_response).to have_key("title")
-      expect(response.parsed_response["public_id"]).to eq(public_id)
+      public_id = "EB-C0156"
+      response1 = EasyBrokerService.new.show_property(public_id)
+      expect(response1.parsed_response).to be_kind_of(Hash)
+      expect(response1.parsed_response["public_id"]).to eq(public_id)
+      expect(response1.parsed_response).to have_key("public_id")
+      expect(response1.parsed_response).to have_key("title")
+      expect(response1.parsed_response).to have_key("description")
+      expect(response1.parsed_response).to have_key("property_type")
+      expect(response1.parsed_response).to have_key("location")
+      expect(response1.parsed_response).to have_key("property_images")
+    end
+
+    it "returns error property not be found", :vcr do
+      public_id = "XXXXXXX"
+      response2 = EasyBrokerService.new.show_property(public_id)
+      expect(response2.parsed_response).to have_key("error")
+      expect(response2.parsed_response["error"]).to eq("No se encontró la propiedad")
     end
   end
 
