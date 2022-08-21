@@ -1,0 +1,148 @@
+.show_title p {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  text-align: center;
+  margin: 1.5rem;
+  padding: 0 4rem;
+}
+
+.show_return {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.show_return a {
+  font-family: var(--font-secondary);
+  padding: .25rem 1rem;
+  border: 1px solid #DDDDDD;
+  color: #3F3F3F;
+}
+
+.show_return a:hover {
+  background-color: #DDDDDD;
+}
+
+.show_content{
+  background-color: #DDDDDD;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  padding: 2rem 3rem;
+  font-size: .9rem;
+}
+
+.show_content-id {
+  margin: 1rem 0;
+}
+
+.show_content-description {
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+.show_content-image {
+  width: 50%;
+  height: 20rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show_content-image img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.show_content-image p {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: auto 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #3F3F3F;
+}
+
+.show_content-others {
+  margin: .5rem 0;
+}
+
+.form_container {
+  width: 50%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.form_container h2 {
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.form_container form {
+  font-family: var(--font-secondary);
+}
+
+.show_message {
+  margin-bottom: 1rem;
+}
+
+.form_message {
+  margin-bottom: 1rem;
+}
+
+.form_message-successful {
+  color:  #10B981;
+  font-weight: 600;
+}
+
+.form_message-error {
+  color: red;
+  font-weight: 600;
+}
+
+.form_input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.form_input label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.form_input input {
+  padding: 0.5rem 0.75rem;
+  border-radius: .5rem;
+  border: 1px solid #C3C3C3;
+  background-color: white;
+}
+
+.form_input textarea {
+  padding: 0.5rem 0.75rem;
+  border-radius: .5rem;
+  border: 1px solid #C3C3C3;
+  background-color: white;
+  height: 5rem;
+}
+
+.form_submit input {
+  width: 100%;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: .5rem;
+  border: 0;
+  background-color: #10B981;
+  color: white;
+  cursor: pointer;
+}
+
+.form_submit input:hover {
+  background-color: #0d9d6d;
+}

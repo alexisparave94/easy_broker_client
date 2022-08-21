@@ -1,32 +1,34 @@
-<div>
-  <p>
-    <strong>ID:</strong>
-    <%= property.public_id %>
-  </p>
+<div class="property_card">
+  <%= link_to(property_url(id: property.public_id, page: page)) do %>
+    <div class="property_card-container">
+      <p class="property_card-id">
+        <strong>ID:</strong>
+        <%= property.public_id %>
+      </p>
 
-  <p>
-    <%= property.title %>
-  </p>
+      <p class="title">
+        <%= property.title %>
+      </p>
 
-  <p>
-    <strong>Property type:</strong>
-    <%= property.property_type %>
-  </p>
+      <p class="property_card-others">
+        <strong>Property type:</strong>
+        <%= property.property_type %>
+      </p>
 
-  <p>
-    <strong>Location:</strong>
-    <%= property.location %>
-  </p>
+      <p class="property_card-others">
+        <strong>Location:</strong>
+        <%= property.location %>
+      </p>
 
-  <p>
-    <% if !property.title_image_thumb %>
-      No hay imagen para mostrar
-    <% else %>
-      <%= image_tag "#{property.title_image_thumb}"%>  
-    <% end %>
-  </p>
-  <p>
-    <%= link_to "Show", property_url(id: property.public_id) %>
-  </p>
-
+      <div class="property_card-image">
+        <% if !property.title_image_thumb %>
+          <p>
+            No hay imagen para mostrar
+          </p> 
+        <% else %>
+          <%= image_tag "#{property.title_image_thumb}"%>  
+        <% end %>
+      </div>
+    </div>  
+  <% end %>
 </div>

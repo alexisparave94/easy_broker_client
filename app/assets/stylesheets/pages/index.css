@@ -1,0 +1,111 @@
+h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1rem auto;
+}
+
+p {
+  font-family: var(--font-secondary);
+  color: #3F3F3F;
+}
+
+.main-container {
+  width: 75%;
+  max-width: 70rem;
+  margin: 3rem auto; 
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.4rem;
+  margin: 2.5rem auto;
+}
+
+.pagination a {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: #888888;
+  padding: .25rem; 
+  border: 1px solid #CBCBCB;
+}
+
+.pagination a:hover {
+  background-color: #CBCBCB;
+}
+
+.pagination p {
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  color: #3F3F3F;
+  padding: .25rem; 
+}
+
+.pagination p:hover {
+  cursor: pointer;
+}
+
+.section-properties {
+  display: grid;
+  grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.property_card {
+  background-color: #DDDDDD;
+  border-radius: 1.25rem ;
+  transition: background-color .2s;
+}
+
+.property_card:active {
+  color: #3F3F3F;
+}
+
+.property_card-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+  height: 100%;
+}
+
+.property_card:hover {
+  transform: scale(1.02);
+  background-color: #CBCBCB;
+}
+
+.property_card-id {
+  font-size: .75rem;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #666666;
+  margin: .5rem 0;
+}
+
+.property_card-others {
+  font-size: .9rem;
+}
+
+.property_card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  margin: .5rem;
+  overflow: hidden;
+}
+
+.property_card-image p {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: auto 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #888888;
+}

@@ -1,33 +1,48 @@
-<p>
-  <strong>ID:</strong>
-  <%= @property.public_id %>
-</p>
-<p>
-  <%= @property.title %>
-</p>
-<p>
-  <%= @property.description %>
-</p>
+<div class="main-container">
+  <div class="show_title">
+    <p>
+      <%= @property.title %>
+    </p>
+  </div>
+  <div class="show_message">
+    <p class="form_message-error">
+      <%= "* #{@res[:error]}" if @res[:error] %>
+    </p>
+    <p class="form_message-successful">
+      <%= "* Contacto Enviado" if @res[:status] %>
+    </p>
+  </div>
+  <div class="show_return">
+    <%= link_to "RETURN TO PROPERTIES", properties_path(page: @page) %>
+  </div>
+  <div class="show_content">
+    <p class="show_content-id">
+      <strong>ID:</strong>
+      <%= @property.public_id %>
+    </p>
+    <p class="show_content-description">
+      <%= @property.description %>
+    </p>
 
-<p>
-  <% if @property.property_images.empty? %>
-    No hay imagen para mostrar
-  <% else %>
-    <%= image_tag "#{@property.property_images[0]['url']}"%>
-  <% end %>
-</p>
-<p>
-  <strong>Property type:</strong>
-  <%= @property.property_type %>
-</p>
+    <div class="show_content-image">
+      <% if @property.property_images.empty? %>
+        <p>
+          No hay imagen para mostrar
+        </p>
+      <% else %>
+        <%= image_tag "#{@property.property_images[0]['url']}"%>
+      <% end %>
+    </div>
+    <p class="show_content-others">
+      <strong>Property type:</strong>
+      <%= @property.property_type %>
+    </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @property.location['name'] %>
-</p>
-
-<div>
-  <%= link_to "Back", properties_path %>
+    <p class="show_content-others">
+      <strong>Location:</strong>
+      <%= @property.location['name'] %>
+    </p>
+  </div>
+  
+  <%= render "form", property: @property, res: @res %>
 </div>
-
-<%= render "form", property: @property, res: @res %>
