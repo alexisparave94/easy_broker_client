@@ -9,6 +9,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @page = params[:page]
     @res = {}
     @res = JSON.parse(params[:res], symbolize_names: true) if params[:res]
     public_id = params[:id]

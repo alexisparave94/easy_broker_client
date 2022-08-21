@@ -1,11 +1,13 @@
-<h1>Properties</h1>
+<div class="main-container">
+  <h1>Properties</h1>
 
-<%= render "pagination", pages_number: @pages_number, page: @page %>
+  <%= render "pagination", pages_number: @pages_number, page: @page %>
 
-<div id="properties">
-  <% @properties.each do |property| %>
-    <%= render "property", property: property %>
-  <% end %>
+  <div class="section-properties">
+    <% @properties.each do |property| %>
+      <%= render "property", property: property, page: @page %>
+    <% end %>
+  </div>
+
+  <%= render "pagination", pages_number: @pages_number, page: @page %>
 </div>
-
-<%= render "pagination", pages_number: @pages_number, page: @page %>

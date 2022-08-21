@@ -1,17 +1,17 @@
-<div>
-  <p>
-    <% unless page == 1 %>
-      <%= link_to "<<", properties_url(page: "#{page-1}") %>
-    <% end %>
-    <% pages_number.times do |i| %>
-      <% if i+1 == page %>
+<div class="pagination">
+  <% unless page == 1 %>
+    <%= link_to "<", properties_url(page: "#{page-1}") %>
+  <% end %>
+  <% pages_number.times do |i| %>
+    <% if i+1 == page %>
+      <p>
         <%= "-"%>
-        <% next%>
-      <% end %>
-      <%= link_to "#{i+1}", properties_url(page: "#{i+1}") %>
+      </p>
+      <% next%>
     <% end %>
-    <% unless page == pages_number %>
-      <%= link_to ">>", properties_url(page: "#{page+1}") %>
-    <% end %>
-  </p>
+    <%= link_to "#{i+1}", properties_url(page: "#{i+1}") %>
+  <% end %>
+  <% unless page == pages_number %>
+    <%= link_to ">", properties_url(page: "#{page+1}") %>
+  <% end %>
 </div>
